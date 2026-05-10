@@ -50,6 +50,13 @@ class ConvRefiner(nn.Module):
         if sys.platform != "linux":
             warn("Local correlation is not supported on non-Linux platforms, setting use_custom_corr to False")
             use_custom_corr = False
+        if use_custom_corr:
+            try:
+                import local_corr  # noqa: F401
+            except ImportError:
+                warn("local_corr extension not installed; "
+                     "setting use_custom_corr to False")
+                use_custom_corr = False
         self.bn_momentum = bn_momentum
         self.block1 = self.create_block(
             in_dim,
