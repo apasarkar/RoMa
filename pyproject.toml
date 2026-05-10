@@ -23,6 +23,12 @@ dependencies = [
     "wandb",
 ]
 
+
+[project.optional-dependencies]
+fused-local-corr = [
+    "fused-local-corr>=0.2.2 ; sys_platform == 'linux'",
+]
+
 core_algo = [
     "einops",
     "h5py",
@@ -35,11 +41,6 @@ core_algo = [
     "torch>=2.5.1",
     "torchvision",
     "tqdm"
-]
-
-[project.optional-dependencies]
-fused-local-corr = [
-    "fused-local-corr>=0.2.2 ; sys_platform == 'linux'",
 ]
 
 [build-system]
