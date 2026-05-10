@@ -23,6 +23,20 @@ dependencies = [
     "wandb",
 ]
 
+core_algo = [
+    "einops",
+    "h5py",
+    "kornia",
+    "loguru",
+    "opencv-contrib-python-headless",
+    "matplotlib",
+    "poselib>=2.0.4",
+    "timm",
+    "torch>=2.5.1",
+    "torchvision",
+    "tqdm"
+]
+
 [project.optional-dependencies]
 fused-local-corr = [
     "fused-local-corr>=0.2.2 ; sys_platform == 'linux'",
